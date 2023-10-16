@@ -10,7 +10,7 @@ from matplotlib.colors import ListedColormap, LinearSegmentedColormap
 
 
 
-svg = {'bbox_inches':0, 'transparent':True}
+svg = {'bbox_inches':'tight', 'transparent':True}
 
 def generate_colormap(N=1024):
     
