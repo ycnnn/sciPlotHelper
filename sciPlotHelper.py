@@ -7,8 +7,6 @@ import matplotlib.patches as patches
 from matplotlib.colors import ListedColormap, LinearSegmentedColormap
 
 
-# _markerwidth = 0.25
-# _markersize = 10
 
 svg = {'bbox_inches':0, 'transparent':True}
 
@@ -137,7 +135,7 @@ def boxplot(ax, data,
 def scatter_format(scatter, 
                    edgecolor='red',
                    facecolor='None',
-                   linewidth=0.5,
+                   linewidth=0.25,
                    markersize=10):
     scatter.set_edgecolor(edgecolor)
     scatter.set_facecolor(facecolor)
