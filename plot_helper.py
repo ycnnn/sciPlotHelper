@@ -90,45 +90,36 @@ def format(figsize,
 
         
 def label_format(ax=None,
-           label_font='Arial',
            label_size=7,
            decimal_digits=0,
            show_ticks=True,
-           showlabels=True):
+           show_labels=True):
     
     ax = ax or plt.gca()
     if show_ticks:
         ax.xaxis.set_major_formatter('{x:<.0f}')
         ax.yaxis.set_major_formatter('{x:<.0f}')
         for label in ax.get_xticklabels():
-            label.set_fontproperties(label_font)
             label.set_fontsize(label_size)   
         for label in ax.get_yticklabels():
-            label.set_fontproperties(label_font)
             label.set_fontsize(label_size)
     else:
         ax.set_xticklabels([])
         ax.set_yticklabels([])
         
-    if showlabels:
+    if show_labels:
         ax.xaxis.label.set_size(label_size)
-        ax.xaxis.label.set_font(label_font)
         ax.yaxis.label.set_size(label_size)
-        ax.yaxis.label.set_font(label_font)
+  
 
-######################
-# Math module needs work!
-# Not recommendedd to use. Probably unstable.
-######################
 
-def math(label_font='Arial'):
-    mpl.rc('text', usetex=True)
- 
+def font_format(font_global="Arial"):
+    plt.rcParams.update({"font.family": font_global})
     mpl.rcParams['mathtext.fontset'] = 'custom'
-    mpl.rcParams['mathtext.it'] = label_font + ':italic'
-    mpl.rcParams['mathtext.rm'] = label_font
-    mpl.rcParams['mathtext.bf'] = label_font + ':bold'
- 
+    mpl.rcParams['mathtext.it'] = font_global + ':italic'
+    mpl.rcParams['mathtext.rm'] = font_global
+    mpl.rcParams['mathtext.bf'] = font_global  + ':bold'
+
     
 def set_size(figsize, ax=None, unit_pt=True):
     ax = ax or plt.gca()
