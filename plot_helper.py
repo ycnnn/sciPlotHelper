@@ -188,7 +188,7 @@ def line_format(lines,
         line.set_linestyle(linestyle)
 
 
-def abline(slope,x,y,ax=None):
+def abline(slope,x,y,ax=None,_linewidth=0.5):
     ax = ax or plt.gca()
     """Plot a line from slope and intercept"""
     x0 = np.mean(x)
